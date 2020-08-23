@@ -17,15 +17,15 @@ Possible filters and flags:
 <tr><td><code>-t</code>, <code>--to</code></td><td>End date (YYYY-MM-DD)</td><td>Filter out all tweets later than this date</td></tr>
 <tr><td><code>-c</code>, <code>--contains</code></td><td>strings to filter on</td><td>Filter out all tweets containing one of given strings</td></tr>
 <tr><td><code>-b</code>, <code>--begins</code></td><td>strings to filter on</td><td>Filter out tweets beginning with one of given strings</td></tr>
-<tr><td><code>-r</code>, <code>--retweets</code></td><td>(none)</td><td>Filter out retweets</td><td></td></tr>
-<tr><td><code>-e</code>, <code>--edits</code></td><td>(none)</td><td>Filter out edits</td><td>Edits are identified by comparing two consecutive tweets. If they are *almost* identical (e.g. [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) is < 10) the earlier one is filtered out</td></tr>
-<tr><td><code>-d</code>, <code>--display</code></td><td>(none)</td><td>Display edits (requires -e) - date and text of the first (which is filtered out) and second</td><td></td></tr>
-<tr><td><code>-p</code>, <code>--pretty</code></td><td>(none)</td><td>Pretty-print output</td><td></td></tr>
+<tr><td><code>-r</code>, <code>--retweets</code></td><td>(none)</td><td>Filter out retweets</td></tr>
+<tr><td><code>-e</code>, <code>--edits</code></td><td>(none)</td><td>Filter out edits. Edits are identified by comparing two consecutive tweets. If they are *almost* identical (e.g. <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> is < 10) the earlier one is filtered out</td></tr>
+<tr><td><code>-d</code>, <code>--display</code></td><td>(none)</td><td>Display edits (requires -e) - date and text of the first (which is filtered out) and second</td></tr>
+<tr><td><code>-p</code>, <code>--pretty</code></td><td>(none)</td><td>Pretty-print output</td></tr>
 </table>
 
 ### Example ###
 `-i tweets-2020-04-19.zip -o filtered.js -f 2019-5-04 -c dragon cat "space ship" -b "** " -r -e -p`<br>
-This will read `tweets-2020-04-19.zip`, presumably the name of an archive downloaded from Twitter, and filter out:
+This will read `tweets-2020-04-19.zip`, which presumably is the name of an archive downloaded from Twitter, and filter out:
 * all tweets from before before May 4, 2019
 * all tweets mentioning "dragon", "cat", or "space ship", even as part of a word (so tweets mentioning "category" will also be filtered out
 * all tweets starting with "** "
